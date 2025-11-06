@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 外圈 -->
+    <item>
+        <shape android:shape="ring"
+            android:innerRadius="15dp"
+            android:thickness="3dp"
+            android:useLevel="false">
+            <solid android:color="#26FFFFFF"/>
+        </shape>
+    </item>
+    
+    <!-- 内部渐变圆圈（模拟加载效果） -->
+    <item android:top="3dp" android:bottom="3dp" android:left="3dp" android:right="3dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="sweep"
+                android:startColor="#FFFFFF"
+                android:centerColor="#80FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:angle="0"/>
+        </shape>
+    </item>
+</layer-list>
+

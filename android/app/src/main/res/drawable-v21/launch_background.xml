@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 深绿色背景 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#274125"/>
+        </shape>
+    </item>
+    
+    <!-- 白色斜线装饰 1 -->
+    <item>
+        <rotate
+            android:fromDegrees="-45"
+            android:toDegrees="-45"
+            android:pivotX="50%"
+            android:pivotY="50%">
+            <shape android:shape="rectangle">
+                <size android:width="2dp" android:height="2000dp"/>
+                <solid android:color="#26FFFFFF"/>
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- 白色斜线装饰 2 -->
+    <item android:left="200dp">
+        <rotate
+            android:fromDegrees="-45"
+            android:toDegrees="-45"
+            android:pivotX="50%"
+            android:pivotY="50%">
+            <shape android:shape="rectangle">
+                <size android:width="2dp" android:height="2000dp"/>
+                <solid android:color="#26FFFFFF"/>
+            </shape>
+        </rotate>
+    </item>
+    
+    <!-- Logo 图片 -->
+    <item android:bottom="150dp">
+        <bitmap 
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher"/>
+    </item>
+    
+    <!-- 加载圆圈 - 位于 Logo 下方 -->
+    <item 
+        android:width="40dp"
+        android:height="40dp"
+        android:gravity="center"
+        android:top="100dp">
+        <shape android:shape="ring"
+            android:innerRadius="15dp"
+            android:thickness="3dp"
+            android:useLevel="false">
+            <gradient
+                android:type="sweep"
+                android:startColor="#FFFFFF"
+                android:centerColor="#80FFFFFF"
+                android:endColor="#00FFFFFF"/>
+        </shape>
+    </item>
+</layer-list>

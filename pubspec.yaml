@@ -1,0 +1,81 @@
+name: tennis_app
+description: 网球社交平台移动应用
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI 相关
+  cupertino_icons: ^1.0.6
+  flutter_screenutil: ^5.9.0  # 屏幕适配
+  
+  # 状态管理
+  flutter_riverpod: ^2.4.9
+  
+  # 路由导航
+  go_router: ^13.0.0
+  
+  # 网络请求
+  dio: ^5.4.0
+  
+  # 本地存储
+  shared_preferences: ^2.2.2
+  
+  # JSON 序列化
+  json_annotation: ^4.8.1
+  
+  # 图片相关
+  image_picker: ^1.0.7
+  cached_network_image: ^3.3.1
+  
+  # 其他工具
+  intl: ^0.19.0  # 国际化
+  logger: ^2.0.2  # 日志
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  
+  # JSON 序列化代码生成
+  build_runner: ^2.4.8
+  json_serializable: ^6.7.1
+  
+  # App 图标和启动页配置
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.10
+
+flutter:
+  uses-material-design: true
+  
+  # 静态资源
+  assets:
+    - assets/images/
+    - assets/icons/
+
+# App 图标配置
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+  adaptive_icon_background: "#274125"
+  adaptive_icon_foreground: "assets/images/logo.png"
+  
+# 启动页配置
+# 注意：启动页样式已通过自定义 launch_background.xml 实现
+# 包含深绿色背景、白色斜线装饰、Logo 和加载圆圈
+flutter_native_splash:
+  color: "#274125"
+  # image: "assets/images/preload.png"  # 已移除，使用自定义布局
+  android: true
+  ios: true
+  web: false
+  android_12:
+    color: "#274125"
+  # 自定义样式在 android/app/src/main/res/drawable/launch_background.xml
+
