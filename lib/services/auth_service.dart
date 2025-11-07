@@ -18,7 +18,7 @@ class AuthService {
   }) async {
     try {
       await _apiService.post(
-        ApiConfig.authSendSmsCode,
+        ApiConfig.auth.sendSmsCode,
         data: {
           'phone': phone,
           'country_code': countryCode,
@@ -46,7 +46,7 @@ class AuthService {
   }) async {
     try {
       final response = await _apiService.post(
-        ApiConfig.authLoginWithSms,
+        ApiConfig.auth.loginWithSms,
         data: {
           'phone': phone,
           'code': code,
@@ -71,7 +71,7 @@ class AuthService {
   Future<TokenResponse> refreshToken(String refreshToken) async {
     try {
       final response = await _apiService.post(
-        ApiConfig.authRefreshToken,
+        ApiConfig.auth.refreshToken,
         data: {'refresh_token': refreshToken},
       );
 
@@ -84,7 +84,7 @@ class AuthService {
   /// 用户登出
   Future<void> logout() async {
     try {
-      await _apiService.post(ApiConfig.authLogout);
+      await _apiService.post(ApiConfig.auth.logout);
       _apiService.clearToken();
     } catch (e) {
       throw Exception('登出失败: $e');
@@ -94,7 +94,7 @@ class AuthService {
   /// 获取当前用户信息
   Future<User> getCurrentUser() async {
     try {
-      final response = await _apiService.get(ApiConfig.authMe);
+      final response = await _apiService.get(ApiConfig.user.me);
       return User.fromJson(response.data as Map<String, dynamic>);
     } catch (e) {
       throw Exception('获取用户信息失败: $e');
@@ -107,7 +107,7 @@ class AuthService {
   Future<User> updateProfile(Map<String, dynamic> data) async {
     try {
       final response = await _apiService.patch(
-        ApiConfig.usersUpdateProfile,
+        ApiConfig.user.updateProfile,
         data: data,
       );
       return User.fromJson(response.data as Map<String, dynamic>);
@@ -126,7 +126,7 @@ class AuthService {
       });
 
       final response = await _apiService.post(
-        ApiConfig.usersUploadAvatar,
+        ApiConfig.user.uploadAvatar,
         data: formData,
       );
 
